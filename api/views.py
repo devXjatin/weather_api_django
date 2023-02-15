@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 # login controller
@@ -19,5 +19,6 @@ def userLogin(request):
     return render(request,'index.html')
 
 #logout controller
-def logout(request):
-    pass
+def userLogout(request):
+    logout(request)
+    return render(request,'index.html')
